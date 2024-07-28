@@ -1,3 +1,4 @@
+#IGNORE
 .env
 node_modules/
 postman_collection.json
