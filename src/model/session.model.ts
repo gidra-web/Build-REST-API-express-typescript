@@ -1,10 +1,9 @@
-import { Express, Request, Response } from 'express';
 import 'dotenv/config'
 import { Schema, model, Document} from 'mongoose';
-import bcrypt from 'bcrypt';
+import {IUser} from './user.model';
 
 export interface ISession extends Document{
-    user: ISession['_id'];
+    user: IUser['_id'];
     valid: boolean;
     userAgent: string;
     createdAt: Date;
@@ -18,6 +17,6 @@ const sessionSchema = new Schema({
 },
 {timestamps: true})
 
-const SessionModel = model('User', sessionSchema);
+const SessionModel = model('Session', sessionSchema);
 
 export default SessionModel;

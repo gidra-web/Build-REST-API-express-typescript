@@ -1,9 +1,8 @@
-import { Express, Request, Response } from 'express';
 import 'dotenv/config'
 import { Schema, model, Document} from 'mongoose';
 import bcrypt from 'bcrypt';
 
-export interface IUser{
+interface IUser extends Document{
     email: string;
     name: string;
     password: string;
@@ -37,4 +36,4 @@ userSchema.methods.comparePassword = async function(candidatePassword: string): 
 
 const UserModel = model<IUser>('User', userSchema);
 
-export default UserModel;
+export {UserModel, IUser};

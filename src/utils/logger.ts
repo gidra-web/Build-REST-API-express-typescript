@@ -10,7 +10,6 @@ const log = pino({
             minimumLevel: 'info',
             levelFirst: true,
             ignore: 'pid,hostname,timestamp', // Correctly specify fields to ignore
-            
         }
         
     },
